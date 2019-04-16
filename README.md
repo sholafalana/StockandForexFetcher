@@ -42,7 +42,6 @@ views
 * Achartengine
 * Room Database
 * ButterKnife
-* Volley
 * Firebase 
 
 ## Screenshots
