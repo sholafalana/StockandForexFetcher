@@ -27,12 +27,12 @@ This app uses alphavantage.co, and 1forge.com API to retrieve stock data at real
 * Allow users to either fetch rates directly, or input a custom rates to convert one currency to another
 
 * Allow users to interact with the app via a widget: When click the widget title, the app fetches current rates instantly . 
-
-* Used adapters and viewholders, and viewpagers to populate list views and graphs.
+views
+* Used adapters and viewholders, and viewpagers to populate list  and graphs.
 
 * Support accessibility for vision-limited users.
 
-* Stored all the strings in string.xml.
+* Stored all the strings variables in string.xml.
 
 ## Libraries
 
