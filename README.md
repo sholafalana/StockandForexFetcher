@@ -14,7 +14,7 @@ With the app, you can:
 
 # How to Work with the Source
 
-This app uses alphavantage.co, and 1forge.com API to retrieve stock data at realtime. You must provide your own API key in order to build the app. When you get it, add it to the NetworkUrlRequest and GraphFetchers class.
+This app uses alphavantage.co, and 1forge.com API to retrieve stock data at realtime. You must provide your own API key in order to build the app. When you get it, add it to the NetworkUrlRequest and GraphFetcher's class.
 
 ## Features
 
@@ -32,7 +32,7 @@ This app uses alphavantage.co, and 1forge.com API to retrieve stock data at real
 
 * Support accessibility for vision-limited users.
 
-* Stored all the strings in string.xml. Stored all the dimens in dimens.xml.
+* Stored all the strings in string.xml.
 
 ## Libraries
 
