@@ -32,7 +32,9 @@ views
 
 * Support accessibility for vision-limited users.
 
-* Stored all the strings variables in string.xml.
+* Uses AsyncTask Query method for stock search
+
+* Stored all the string variables in string.xml.
 
 ## Libraries
 
