@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.dexertencreatives.stockandforexfetcher.R;
-import com.dexertencreatives.stockandforexfetcher.network.NetworkURLRequest;
+import com.dexertencreatives.stockandforexfetcher.data.network.NetworkURLRequest;
 
 public class TradeResourceActivity extends AppCompatActivity {
 

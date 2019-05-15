@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.dexertencreatives.stockandforexfetcher.R;
 import com.dexertencreatives.stockandforexfetcher.model.ParseAlphaData;
-import com.dexertencreatives.stockandforexfetcher.network.Formatter;
+import com.dexertencreatives.stockandforexfetcher.data.network.Formatter;
 
 import java.util.ArrayList;
 

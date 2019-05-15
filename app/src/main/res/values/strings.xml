@@ -199,5 +199,10 @@
     <string name="data_source_alpha">Data Source - AlphaVantage</string>
     <string name="alpha_vnt">AlphaVantage</string>
 
+    <string name="action_settings">Settings</string>
+    <string name="percentage">%s%%</string>
+    <string name="priceInDollars">$%s</string>
+    <string name="cap24hrChangeTitle">24h: \u0020</string>
+    <string name="forex">Forex</string>
 
 </resources>

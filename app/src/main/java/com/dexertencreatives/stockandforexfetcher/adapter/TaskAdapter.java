@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.dexertencreatives.stockandforexfetcher.FXDatabase.JournalEntry;
+import com.dexertencreatives.stockandforexfetcher.model.JournalEntry;
 import com.dexertencreatives.stockandforexfetcher.R;
 
 import java.text.SimpleDateFormat;

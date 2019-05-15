@@ -1,4 +1,4 @@
-package com.dexertencreatives.stockandforexfetcher.network;
+package com.dexertencreatives.stockandforexfetcher.data.network;
 
 /**
  * Created by shola on 11/25/2018.

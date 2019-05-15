@@ -1,4 +1,6 @@
-package com.dexertencreatives.stockandforexfetcher.network;
+package com.dexertencreatives.stockandforexfetcher.data.network;
+
+import com.dexertencreatives.stockandforexfetcher.BuildConfig;
 
 /**
  * Created by shola on 11/16/2018.
@@ -6,8 +8,8 @@ package com.dexertencreatives.stockandforexfetcher.network;
 
 public class NetworkURLRequest {
 
-    String alphaAPIKey = "alphavantage.co APIKEY";
-    String fOAPIKey = "1forge.com APIKEY";
+    String alphaAPIKey = BuildConfig.API_KEY1;
+    String fOAPIKey = BuildConfig.API_KEY2;
 
     public String FXRequest(String FXPeriod, String theSymbol) {
         char firstLetter = theSymbol.charAt(0);

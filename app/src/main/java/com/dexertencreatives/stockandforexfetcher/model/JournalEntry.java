@@ -1,4 +1,4 @@
-package com.dexertencreatives.stockandforexfetcher.FXDatabase;
+package com.dexertencreatives.stockandforexfetcher.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

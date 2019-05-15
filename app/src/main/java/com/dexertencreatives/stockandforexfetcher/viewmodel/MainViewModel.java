@@ -6,8 +6,8 @@ import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.dexertencreatives.stockandforexfetcher.FXDatabase.AppDatabase;
-import com.dexertencreatives.stockandforexfetcher.FXDatabase.JournalEntry;
+import com.dexertencreatives.stockandforexfetcher.data.database.AppDatabase;
+import com.dexertencreatives.stockandforexfetcher.model.JournalEntry;
 
 import java.util.List;
 

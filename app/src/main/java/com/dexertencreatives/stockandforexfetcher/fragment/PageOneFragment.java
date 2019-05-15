@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.dexertencreatives.stockandforexfetcher.R;
-import com.dexertencreatives.stockandforexfetcher.network.GraphFetcher;
+import com.dexertencreatives.stockandforexfetcher.data.network.GraphFetcher;
 
 public class PageOneFragment extends Fragment {
     LinearLayout lv;

@@ -3,7 +3,7 @@ package com.dexertencreatives.stockandforexfetcher.viewmodel;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
-import com.dexertencreatives.stockandforexfetcher.FXDatabase.AppDatabase;
+import com.dexertencreatives.stockandforexfetcher.data.database.AppDatabase;
 
 /**
  * Created by shola on 3/18/2019.

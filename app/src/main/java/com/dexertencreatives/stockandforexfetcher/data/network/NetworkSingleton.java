@@ -1,4 +1,4 @@
-package com.dexertencreatives.stockandforexfetcher.network;
+package com.dexertencreatives.stockandforexfetcher.data.network;
 
 import android.content.Context;
 

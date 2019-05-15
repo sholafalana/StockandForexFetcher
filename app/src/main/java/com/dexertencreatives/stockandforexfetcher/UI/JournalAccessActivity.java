@@ -11,10 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
-import com.dexertencreatives.stockandforexfetcher.FXDatabase.JournalEntry;
+import com.dexertencreatives.stockandforexfetcher.model.JournalEntry;
 import com.dexertencreatives.stockandforexfetcher.viewmodel.AddTaskViewModel;
 import com.dexertencreatives.stockandforexfetcher.viewmodel.AddTaskViewModelFactory;
-import com.dexertencreatives.stockandforexfetcher.FXDatabase.AppDatabase;
+import com.dexertencreatives.stockandforexfetcher.data.database.AppDatabase;
 import com.dexertencreatives.stockandforexfetcher.viewmodel.LoadJournalVModel;
 import com.dexertencreatives.stockandforexfetcher.R;
 

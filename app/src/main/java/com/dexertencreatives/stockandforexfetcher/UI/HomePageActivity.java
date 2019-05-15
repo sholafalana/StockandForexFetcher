@@ -44,7 +44,7 @@ public class HomePageActivity extends AppCompatActivity {
         firebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         btMarketRate.setOnClickListener(v -> {
-            Intent CurrDetailIntent = new Intent(v.getContext(), CurrencyDisplayActivity.class);
+            Intent CurrDetailIntent = new Intent(v.getContext(), CoinListActivity.class);
             startActivity(CurrDetailIntent);
             Bundle bundle = new Bundle();
 

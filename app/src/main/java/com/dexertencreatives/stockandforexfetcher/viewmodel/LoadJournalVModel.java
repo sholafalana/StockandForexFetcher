@@ -5,8 +5,8 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
-import com.dexertencreatives.stockandforexfetcher.FXDatabase.AppDatabase;
-import com.dexertencreatives.stockandforexfetcher.FXDatabase.JournalEntry;
+import com.dexertencreatives.stockandforexfetcher.data.database.AppDatabase;
+import com.dexertencreatives.stockandforexfetcher.model.JournalEntry;
 
 /**
  * Created by shola on 3/17/2019.

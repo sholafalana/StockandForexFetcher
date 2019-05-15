@@ -16,10 +16,10 @@ import android.widget.Spinner;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
-import com.dexertencreatives.stockandforexfetcher.FXDatabase.AppDatabase;
+import com.dexertencreatives.stockandforexfetcher.data.database.AppDatabase;
 import com.dexertencreatives.stockandforexfetcher.viewmodel.LoadJournalVModel;
 import com.dexertencreatives.stockandforexfetcher.viewmodel.MainViewModel;
-import com.dexertencreatives.stockandforexfetcher.FXDatabase.JournalEntry;
+import com.dexertencreatives.stockandforexfetcher.model.JournalEntry;
 import com.dexertencreatives.stockandforexfetcher.R;
 import com.dexertencreatives.stockandforexfetcher.adapter.TaskAdapter;
 

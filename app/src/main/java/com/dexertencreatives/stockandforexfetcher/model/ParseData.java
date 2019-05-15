@@ -1,13 +1,19 @@
 package com.dexertencreatives.stockandforexfetcher.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 /**
  * Author: shola
  * Created by: ModelGenerator on 11/10/2018
  */
+@Entity(tableName = "parse_data")
 public class ParseData implements Parcelable {
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
     private String symbol;
     private String price;
     private String timestamp;

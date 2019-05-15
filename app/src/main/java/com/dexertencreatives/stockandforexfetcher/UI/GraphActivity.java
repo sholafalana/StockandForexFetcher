@@ -7,9 +7,9 @@ import com.dexertencreatives.stockandforexfetcher.R;
 import com.dexertencreatives.stockandforexfetcher.adapter.AlphaDataAdapter;
 import com.dexertencreatives.stockandforexfetcher.adapter.CustomFragmentAdapter;
 import com.dexertencreatives.stockandforexfetcher.model.ParseAlphaData;
-import com.dexertencreatives.stockandforexfetcher.network.Formatter;
-import com.dexertencreatives.stockandforexfetcher.network.NetworkSingleton;
-import com.dexertencreatives.stockandforexfetcher.network.NetworkURLRequest;
+import com.dexertencreatives.stockandforexfetcher.data.network.Formatter;
+import com.dexertencreatives.stockandforexfetcher.data.network.NetworkSingleton;
+import com.dexertencreatives.stockandforexfetcher.data.network.NetworkURLRequest;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import android.content.Context;

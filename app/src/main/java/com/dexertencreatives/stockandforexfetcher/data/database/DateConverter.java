@@ -1,4 +1,4 @@
-package com.dexertencreatives.stockandforexfetcher.FXDatabase;
+package com.dexertencreatives.stockandforexfetcher.data.database;
 
 import android.arch.persistence.room.TypeConverter;
 
