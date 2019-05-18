@@ -136,7 +136,7 @@ public class CurrencyExchangeActivity extends AppCompatActivity {
                 homeSymbol = tvHomeText.getText().toString().trim();
                 fullSymbol = baseSymbol + homeSymbol;
                 if (fullSymbol.length() != 0) {
-                    
+
                     fetchCurrData(networkURLRequest.GlobalQuoteRequest(fullSymbol));
                 }
             } else {
@@ -168,10 +168,7 @@ public class CurrencyExchangeActivity extends AppCompatActivity {
 
 
             try {
-
-
                 JSONObject series = response.getJSONObject(getString(R.string.time_series_daily));
-                JSONObject meta = response.getJSONObject(getString(R.string.meta_data));
                 JSONObject lastData = null, secondData = null;
                 for (int i = 0; i < series.names().length(); i++) {
                     if (i == 0) lastData = series.getJSONObject(series.names().optString(i));

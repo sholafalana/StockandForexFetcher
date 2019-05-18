@@ -66,8 +66,8 @@
 
     <string name="add_button">Add</string>
     <string name="update_button">Update</string>
-    <string name="appwidget_text">Get Live Market Rates</string>
-    <string name="appwidget_header">Currency List</string>
+    <string name="appwidget_text">Get Live Coins Rates</string>
+    <string name="appwidget_header">Coins List</string>
     <string name="quote_text">Quote</string>
     <string name="base">Base</string>
     <string name="XXX">EUR</string>
@@ -203,6 +203,6 @@
     <string name="percentage">%s%%</string>
     <string name="priceInDollars">$%s</string>
     <string name="cap24hrChangeTitle">24h: \u0020</string>
-    <string name="forex">Forex</string>
+    <string name="forex">Search</string>
 
 </resources>

@@ -1,8 +1,10 @@
 package com.dexertencreatives.stockandforexfetcher.UI;
 
+import android.appwidget.AppWidgetManager;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Intent;
+import android.content.ComponentName;
+
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -14,6 +16,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.RemoteViews;
+import android.widget.Toast;
 
 
 import com.dexertencreatives.stockandforexfetcher.R;
@@ -24,6 +28,7 @@ import com.dexertencreatives.stockandforexfetcher.adapter.CryptoAdapter;
 import com.dexertencreatives.stockandforexfetcher.model.Coin;
 import com.dexertencreatives.stockandforexfetcher.viewmodel.CoinListViewModel;
 import com.dexertencreatives.stockandforexfetcher.viewmodel.ViewModelFactory;
+import com.dexertencreatives.stockandforexfetcher.widgets.AppWidget;
 
 import java.util.List;
 
@@ -44,6 +49,7 @@ public class CryptoDisplayActivity extends AppCompatActivity {
     @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout mSwipeRefreshLayout;
     private CryptoAdapter mCryptoAdapter;
+    private final CharSequence toastString = " Coin Widget Set";
 
 
     @Override
@@ -100,10 +106,33 @@ public class CryptoDisplayActivity extends AppCompatActivity {
                 //    startActivity(CurrIntent);
                 return true;
 
+            case R.id.refresh_settings:
+                viewModel.refresh();
+                return true;
+            case R.id.widget_settings:
+                createWidget();
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    private void createWidget() {
+
+        String Tile1 = getString(R.string.rate_header);
+        String Tile2 = getString(R.string.wid_msg);
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
+        RemoteViews remoteViews = new RemoteViews(this.getPackageName(), R.layout.cuurency_widget_layout);
+        ComponentName thisWidget = new ComponentName(this, AppWidget.class);
+        remoteViews.setTextViewText(R.id.appwidget_head_text, Tile1);
+        remoteViews.setTextViewText(R.id.appwidget_text, Tile2);
+        appWidgetManager.updateAppWidget(thisWidget, remoteViews);
+        Toast.makeText(this, toastString,
+                Toast.LENGTH_LONG).show();
+    }
+
+
 
 
     private SwipeRefreshLayout.OnRefreshListener mRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {

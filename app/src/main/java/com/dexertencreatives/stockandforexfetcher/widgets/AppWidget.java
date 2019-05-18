@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 
 import com.dexertencreatives.stockandforexfetcher.R;
+import com.dexertencreatives.stockandforexfetcher.UI.CryptoDisplayActivity;
 
 /**
  * Created by shola on 3/19/2019.
@@ -23,7 +24,7 @@ public class AppWidget extends AppWidgetProvider {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.cuurency_widget_layout);
         views.setTextViewText(R.id.appwidget_text, widgetText);
 
-        Intent intent = new Intent(context, CurrencyDisplayActivity.class);
+        Intent intent = new Intent(context, CryptoDisplayActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
         views.setOnClickPendingIntent(R.id.appwidget_text, pendingIntent);
         // Instruct the widget manager to update the widget
