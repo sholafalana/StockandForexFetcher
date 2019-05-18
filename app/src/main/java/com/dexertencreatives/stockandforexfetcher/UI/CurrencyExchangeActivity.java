@@ -181,7 +181,7 @@ public class CurrencyExchangeActivity extends AppCompatActivity {
                 }
                 if (lastData == null || secondData == null) return;
                 progressBar.setVisibility(View.INVISIBLE);
-                String price = Double.valueOf(lastData.optString(getString(R.string.g_close))).toString();
+                price = Double.valueOf(lastData.optString(getString(R.string.g_close))).toString();
 
                 progressBar.setVisibility(View.INVISIBLE);
                 tvSetRate.setText(price);
