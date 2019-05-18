@@ -102,7 +102,7 @@ public class HomePageActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.Live_rate:
-                Intent CurrDetailIntent = new Intent(HomePageActivity.this, CurrencyDisplayActivity.class);
+                Intent CurrDetailIntent = new Intent(HomePageActivity.this, CryptoDisplayActivity.class);
                 startActivity(CurrDetailIntent);
 
                 return true;

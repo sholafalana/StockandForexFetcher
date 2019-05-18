@@ -136,6 +136,7 @@ public class CurrencyExchangeActivity extends AppCompatActivity {
                 homeSymbol = tvHomeText.getText().toString().trim();
                 fullSymbol = baseSymbol + homeSymbol;
                 if (fullSymbol.length() != 0) {
+                    
                     fetchCurrData(networkURLRequest.GlobalQuoteRequest(fullSymbol));
                 }
             } else {

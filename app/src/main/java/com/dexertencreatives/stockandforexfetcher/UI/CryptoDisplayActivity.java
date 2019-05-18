@@ -96,8 +96,8 @@ public class CryptoDisplayActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.currency:
-                Intent CurrIntent = new Intent(this, CurrencyDisplayActivity.class);
-                startActivity(CurrIntent);
+                // Intent CurrIntent = new Intent(this, CurrencyDisplayActivity.class);
+                //    startActivity(CurrIntent);
                 return true;
 
             default:

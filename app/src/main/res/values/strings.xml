@@ -92,7 +92,7 @@
     <string name="c_calc">CALC</string>
     <string name="bar_main_title">Search Stocks and Forex</string>
     <string name="sub_title">Market Quote and Trading Resources</string>
-    <string name="live_market_rate">Live Market Rate</string>
+    <string name="live_market_rate">Live Coin Rate</string>
     <string name="generate_pivot">Generate Pivot</string>
     <string name="currency_converter">Currency Converter</string>
     <string name="trade_journal">Trade Journal</string>
