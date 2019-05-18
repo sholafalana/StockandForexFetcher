@@ -14,17 +14,16 @@ With the app, you can:
 
 # How to Work with the Source
 
-This app uses alphavantage.co, and 1forge.com API to retrieve stock data at realtime. You must provide your own API key in order to build the app. When you get it, add it to the NetworkUrlRequest and GraphFetcher's class.
+This app uses alphavantage.co, and coincap API to retrieve stock data at realtime. You must provide your own API key in order to build the app. When you get it, add it to build.gradle file located in the app module.
 
 ## Features
 
-* Present users with a linear layout arrangement of currency realtime information .
+* Present users with a linear layout arrangement of cryptocurrency realtime information .
 
 * Allow users to easily fetch currency price or input a custom price, and calculate the pivot point of currenies
 
 * Implemented Room Database to save trade events data.
 
-* Allow users to either fetch rates directly, or input a custom rates to convert one currency to another
 
 * Allow users to interact with the app via a widget: When click the widget title, the app fetches current rates instantly . 
 views
