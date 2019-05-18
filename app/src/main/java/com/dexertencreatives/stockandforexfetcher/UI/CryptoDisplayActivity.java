@@ -20,7 +20,7 @@ import com.dexertencreatives.stockandforexfetcher.R;
 
 
 import com.dexertencreatives.stockandforexfetcher.Utils.App;
-import com.dexertencreatives.stockandforexfetcher.adapter.CoinListAdapter;
+import com.dexertencreatives.stockandforexfetcher.adapter.CryptoAdapter;
 import com.dexertencreatives.stockandforexfetcher.model.Coin;
 import com.dexertencreatives.stockandforexfetcher.viewmodel.CoinListViewModel;
 import com.dexertencreatives.stockandforexfetcher.viewmodel.ViewModelFactory;
@@ -32,9 +32,9 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class CoinListActivity extends AppCompatActivity {
+public class CryptoDisplayActivity extends AppCompatActivity {
 
-    public static final String MAIN_VIEW_TAG = CoinListActivity.class.getSimpleName();
+    public static final String MAIN_VIEW_TAG = CryptoDisplayActivity.class.getSimpleName();
 
     @Inject
     ViewModelFactory mFactory;
@@ -43,7 +43,7 @@ public class CoinListActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout mSwipeRefreshLayout;
-    private CoinListAdapter mCoinListAdapter;
+    private CryptoAdapter mCryptoAdapter;
 
 
     @Override
@@ -67,11 +67,11 @@ public class CoinListActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable List<Coin> coins) {
                 if (coins != null) {
-                    if (mCoinListAdapter != null) {
-                        mCoinListAdapter.updateCoinList(coins);
+                    if (mCryptoAdapter != null) {
+                        mCryptoAdapter.updateCoinList(coins);
                     } else {
-                        mCoinListAdapter = new CoinListAdapter(getApplicationContext(), coins);
-                        mRecyclerView.setAdapter(mCoinListAdapter);
+                        mCryptoAdapter = new CryptoAdapter(getApplicationContext(), coins);
+                        mRecyclerView.setAdapter(mCryptoAdapter);
                     }
                 }
 

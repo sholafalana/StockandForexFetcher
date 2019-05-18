@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.dexertencreatives.stockandforexfetcher.BuildConfig;
 import com.dexertencreatives.stockandforexfetcher.R;
 import com.dexertencreatives.stockandforexfetcher.Utils.Helpers;
@@ -27,14 +28,14 @@ import butterknife.ButterKnife;
  * Created by USER on 5/12/2019.
  */
 
-public class CoinListAdapter extends RecyclerView.Adapter<CoinListAdapter.CustomViewHolder> {
+public class CryptoAdapter extends RecyclerView.Adapter<CryptoAdapter.CustomViewHolder> {
     private Context mContext;
     private List<Coin> mCoins;
     String imageContentURL = BuildConfig.CONTENT_URL;
 
     private boolean isFirstLoad;
 
-    public CoinListAdapter(Context context, List<Coin> coins) {
+    public CryptoAdapter(Context context, List<Coin> coins) {
         mContext = context;
         mCoins = coins;
         isFirstLoad = true;
@@ -88,6 +89,7 @@ public class CoinListAdapter extends RecyclerView.Adapter<CoinListAdapter.Custom
         Glide.with(mContext)
                 .load(imageContentURL +
                         coin.getShortName().toLowerCase() + ".png")
+                .apply(RequestOptions.circleCropTransform())
                 .into(holder.coinImage);
     }
 

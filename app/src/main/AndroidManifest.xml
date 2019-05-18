@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.CoinListActivity"
+            android:name=".UI.CryptoDisplayActivity"
             android:parentActivityName=".UI.HomePageActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

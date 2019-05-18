@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/recycler_layout"
     android:background="@color/colorPrimary"
-    tools:context="com.dexertencreatives.stockandforexfetcher.UI.CoinListActivity">
+    tools:context="com.dexertencreatives.stockandforexfetcher.UI.CryptoDisplayActivity">
 
     <include layout="@layout/content_main" />
 

@@ -16,19 +16,26 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.dexertencreatives.stockandforexfetcher.R;
+import com.dexertencreatives.stockandforexfetcher.adapter.AlphaDataAdapter;
+import com.dexertencreatives.stockandforexfetcher.data.network.Formatter;
 import com.dexertencreatives.stockandforexfetcher.data.network.NetworkSingleton;
 import com.dexertencreatives.stockandforexfetcher.data.network.NetworkURLRequest;
+import com.dexertencreatives.stockandforexfetcher.model.ParseAlphaData;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.android.volley.Request.Method.GET;
 import static com.dexertencreatives.stockandforexfetcher.UI.GraphActivity.EXTRA_SYMBOL;
 
 public class CurrencyExchangeActivity extends AppCompatActivity {
@@ -129,7 +136,7 @@ public class CurrencyExchangeActivity extends AppCompatActivity {
                 homeSymbol = tvHomeText.getText().toString().trim();
                 fullSymbol = baseSymbol + homeSymbol;
                 if (fullSymbol.length() != 0) {
-                    fetchCurrData(networkURLRequest.Get1ForgeApiRate1(fullSymbol));
+                    fetchCurrData(networkURLRequest.GlobalQuoteRequest(fullSymbol));
                 }
             } else {
                 showErrorMessage();
@@ -138,39 +145,56 @@ public class CurrencyExchangeActivity extends AppCompatActivity {
     }
 
 
-    private void fetchCurrData(String dataUrl) {
-        progressBar.setVisibility(View.VISIBLE);
-        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, dataUrl,
-                null,
-                array -> {
-
-                    try {
-                        //  JSONObject dataObject = null;
-                        for (int i = 0; i < array.length(); i++) {
-                            if (i == 0) {
-                                JSONObject dataObject = array.getJSONObject(i);
-                                price = dataObject.optString(getString(R.string.json_price));
-                                Log.d(TAG, price + getString(R.string.Curr_log));
-                                break;
-                            }
-
-                        }
-                        progressBar.setVisibility(View.INVISIBLE);
-                        tvSetRate.setText(price);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                },
-                error -> showErrorMessage()
-        );
-        mRequestQueue.add(jsonObjectRequest);
-    }
-
     private void showErrorMessage() {
         Toast.makeText(CurrencyExchangeActivity.this, getResources().getText(R.string.no_connectivity_error), Toast.LENGTH_SHORT).show();
 
     }
+
+
+    private void fetchCurrData(String urlRequest) {
+
+        progressBar.setVisibility(View.VISIBLE);
+        JsonObjectRequest request = new JsonObjectRequest(GET, urlRequest, null, onDataLoaded, onDataError);
+
+        mRequestQueue.add(request);
+
+
+    }
+
+    private final Response.Listener<JSONObject> onDataLoaded = new Response.Listener<JSONObject>() {
+        @Override
+        public void onResponse(JSONObject response) {
+
+
+            try {
+
+
+                JSONObject series = response.getJSONObject(getString(R.string.time_series_daily));
+                JSONObject meta = response.getJSONObject(getString(R.string.meta_data));
+                JSONObject lastData = null, secondData = null;
+                for (int i = 0; i < series.names().length(); i++) {
+                    if (i == 0) lastData = series.getJSONObject(series.names().optString(i));
+                    if (i == 1) {
+                        secondData = series.getJSONObject(series.names().optString(i));
+                        break;
+                    }
+                }
+                if (lastData == null || secondData == null) return;
+                progressBar.setVisibility(View.INVISIBLE);
+                String price = Double.valueOf(lastData.optString(getString(R.string.g_close))).toString();
+
+                progressBar.setVisibility(View.INVISIBLE);
+                tvSetRate.setText(price);
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+    };
+
+    private final Response.ErrorListener onDataError = error -> error.printStackTrace();
 
     private boolean isOnline() {
         ConnectivityManager connectivityManager
