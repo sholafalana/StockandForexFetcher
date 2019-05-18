@@ -23,7 +23,6 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.dexertencreatives.stockandforexfetcher.ForexCalc.PivotPointCalc;
 import com.dexertencreatives.stockandforexfetcher.R;
-import com.dexertencreatives.stockandforexfetcher.model.ParseData;
 import com.dexertencreatives.stockandforexfetcher.data.network.NetworkSingleton;
 import com.dexertencreatives.stockandforexfetcher.data.network.NetworkURLRequest;
 

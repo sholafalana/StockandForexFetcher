@@ -13,12 +13,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.dexertencreatives.stockandforexfetcher.BuildConfig;
 import com.dexertencreatives.stockandforexfetcher.R;
-import com.dexertencreatives.stockandforexfetcher.model.ParseData;
 
 
 import java.util.ArrayList;
-
-import butterknife.BindView;
 
 /**
  * Created by shola on 11/13/2018.

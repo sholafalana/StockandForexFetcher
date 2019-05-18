@@ -25,7 +25,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.dexertencreatives.stockandforexfetcher.R;
 import com.dexertencreatives.stockandforexfetcher.adapter.CurrDataAdapter;
-import com.dexertencreatives.stockandforexfetcher.model.ParseData;
 import com.dexertencreatives.stockandforexfetcher.data.network.NetworkSingleton;
 import com.dexertencreatives.stockandforexfetcher.data.network.NetworkURLRequest;
 import com.dexertencreatives.stockandforexfetcher.widgets.AppWidget;
