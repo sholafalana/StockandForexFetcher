@@ -8,7 +8,7 @@ With the app, you can:
    * Fetch Financial data from a remote network
    * persist data from saved events
    * Calculates the Pivot point, Resistance and Support price of selected currency
-   * compute Exchange rate at real time
+   * Display real time cryptocurrency update
    * Instantly search for any stock, currency, or CFds with the instrument symbol
    * Gets the graphical analysis of any stock, or currency
 
