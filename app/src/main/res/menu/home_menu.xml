@@ -11,10 +11,6 @@
         android:title="@string/generate_pivot"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/curr_conv"
-        android:title="@string/currency_converter"
-        app:showAsAction="never" />
 
     <item
         android:id="@+id/trade_journal"

@@ -23,8 +23,6 @@ public class HomePageActivity extends AppCompatActivity {
     Button btSignalGen;
     @BindView(R.id.trade_journal)
     Button mTradeJournal;
-    @BindView(R.id.convert_curr)
-    Button mCurrConvert;
     @BindView(R.id.trade_resource)
     Button mTradeResource;
     private static final String SAVED_SORT = "KeyForLayoutManagerState";
@@ -64,10 +62,7 @@ public class HomePageActivity extends AppCompatActivity {
             Intent currIntent = new Intent(v.getContext(), TradeResourceActivity.class);
             startActivity(currIntent);
         });
-        mCurrConvert.setOnClickListener(v -> {
-            Intent currIntent = new Intent(v.getContext(), CurrencyExchangeActivity.class);
-            startActivity(currIntent);
-        });
+
 
         mTradeJournal.setOnClickListener(v -> {
             Intent tjIntent = new Intent(v.getContext(), TradeJournalActivity.class);
@@ -110,10 +105,7 @@ public class HomePageActivity extends AppCompatActivity {
                 Intent pivotIntent = new Intent(HomePageActivity.this, PivotGeneratorActivity.class);
                 startActivity(pivotIntent);
                 return true;
-            case R.id.curr_conv:
-                Intent currConvIntent = new Intent(HomePageActivity.this, CurrencyExchangeActivity.class);
-                startActivity(currConvIntent);
-                return true;
+
             case R.id.trade_journal:
                 Intent journalIntent = new Intent(HomePageActivity.this, TradeJournalActivity.class);
                 startActivity(journalIntent);

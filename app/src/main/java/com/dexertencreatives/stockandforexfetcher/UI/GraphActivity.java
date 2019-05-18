@@ -137,12 +137,7 @@ public class GraphActivity extends AppCompatActivity {
                 startActivity(pivotIntent);
 
                 return true;
-            case R.id.get_rate:
-                Intent CurrIntent = new Intent(GraphActivity.this, CurrencyExchangeActivity.class);
-                CurrIntent.putExtra(GraphActivity.EXTRA_SYMBOL, symbol);
-                Toast.makeText(this.getApplicationContext(), symbol, Toast.LENGTH_SHORT).show();
-                startActivity(CurrIntent);
-                return true;
+
 
             default:
                 return super.onOptionsItemSelected(item);

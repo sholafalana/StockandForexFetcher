@@ -54,13 +54,6 @@
                 android:value="com.dexertencreatives.stockandforexfetcher.UI.HomePageActivity" />
         </activity>
         <activity
-            android:name=".UI.CurrencyExchangeActivity"
-            android:parentActivityName=".UI.HomePageActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.dexertencreatives.stockandforexfetcher.UI.HomePageActivity" />
-        </activity>
-        <activity
             android:name=".UI.TradeResourceActivity"
             android:parentActivityName=".UI.HomePageActivity">
             <meta-data
