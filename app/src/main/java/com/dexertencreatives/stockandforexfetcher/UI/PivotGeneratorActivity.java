@@ -83,8 +83,6 @@ public class PivotGeneratorActivity extends AppCompatActivity implements View.On
     private static final String SAVED_SORTS2 = "KeyForLayoutManagerState";
     private static final String SAVED_SORTS3 = "KeyForLayoutManagerState";
 
-    private final Context context = this;
-    private ArrayList<ParseData> mParseData;
     private RequestQueue mRequestQueue;
     private int SPINNER_POSITION = -1;
 
@@ -100,7 +98,6 @@ public class PivotGeneratorActivity extends AppCompatActivity implements View.On
         fetchPrice.setOnClickListener(this);
         calculatePivot.setOnClickListener(this);
 
-        mParseData = new ArrayList<>();
         mRequestQueue = NetworkSingleton.getInstance(this).getRequestQueue();
         spinnerListener();
         updateActionBar();
@@ -198,8 +195,6 @@ public class PivotGeneratorActivity extends AppCompatActivity implements View.On
         public void onResponse(JSONObject response) {
             //Parse results
             try {
-                //Clear current data List Before parsing
-                mParseData.clear();
                 JSONObject series = response.optJSONObject(getString(R.string.p_fx_daily));
                 JSONObject lastData = null, secondData = null;
                 for (int i = 0; i < series.names().length(); i++) {

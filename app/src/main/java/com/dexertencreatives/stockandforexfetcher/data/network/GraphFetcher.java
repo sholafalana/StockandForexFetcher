@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.dexertencreatives.stockandforexfetcher.BuildConfig;
 import com.dexertencreatives.stockandforexfetcher.Graphs.BarGraphHandler;
 import com.dexertencreatives.stockandforexfetcher.UI.GraphActivity;
 import com.dexertencreatives.stockandforexfetcher.Graphs.GraphStockHelper;
@@ -32,7 +33,7 @@ public class GraphFetcher extends AsyncTask<String, Void, GraphStockData> {
     LinearLayout lv;
     RelativeLayout rv;
     GraphActivity context;
-    String alphaAPIKey = "alphavantage.co APIKEY";
+    String alphaAPIKey = BuildConfig.API_KEY1;
 
     public GraphFetcher(Activity context, LinearLayout lv, RelativeLayout rv) {
         this.context = (GraphActivity) context;

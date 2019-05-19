@@ -1,434 +1,426 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/brandcolor"
-    android:layout_height="match_parent">
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:id="@+id/title_layout"
-        android:padding="16dp"
-        android:background="@color/brandcolor"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/brandcolor"
-            style="@style/TextAppearance.AppCompat.Medium"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:text="@string/a_symbol"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/symbol_floatbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:visibility="invisible"
-            android:src="@drawable/ic_arrow_drop_up_black_36dp"
-            android:layout_marginEnd="8dp"
-            android:layout_toStartOf="@id/symbol_data"
-            app:backgroundTint="@color/brandcolor" />
-
-
-        <TextView
-            android:id="@+id/symbol_data"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="8dp"
-            style="@style/TextAppearance.AppCompat.Small"
-            android:background="@color/brandcolor"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            tools:text="GBPUSD" />
-
-    </RelativeLayout>
-
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="0dp"
+    card_view:cardCornerRadius="1dp"
+    android:background="@color/colorPrimary"
+    card_view:cardUseCompatPadding="true">
     <LinearLayout
-        android:background="@color/brandcolor"
-        android:padding="16dp"
+        android:id="@+id/ItemMainLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="@color/brandcolor">
+
+        <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="@color/brandcolor">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/brandcolor"
-                android:layout_alignParentStart="true"
+                android:textSize="18sp"
+                android:textColor="#bebcbc"
+                android:gravity="start"
                 style="@style/TextAppearance.AppCompat.Medium"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:layout_marginStart="16dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:textStyle="bold"
+                android:text="@string/a_symbol"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:background="@color/brandcolor"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_weight="2.5">
+
+                <TextView
+                    android:id="@+id/symbol_data"
+                    android:textSize="17sp"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/data_close"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                style="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:background="@color/brandcolor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/symbol_floatbutton"
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+                        android:id="@+id/data_price_change"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        style="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="@color/brandcolor">
+
+            <TextView
+                android:textSize="18sp"
+                android:textColor="#bebcbc"
+                android:gravity="start"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:text="@string/a_daily_open"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/data_open"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_marginEnd="16dp"
-                style="@style/TextAppearance.AppCompat.Small"
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
                 android:background="@color/brandcolor"
-                android:layout_alignParentEnd="true"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="Price" />
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5">
 
-        </RelativeLayout>
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/data_open"
+                    android:textSize="17sp"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/text"
+                    android:gravity="end"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-    <LinearLayout
-        android:background="@color/brandcolor"
-        android:padding="16dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <RelativeLayout
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="@color/brandcolor">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/brandcolor"
-                android:layout_alignParentStart="true"
+                android:textSize="18sp"
+                android:textColor="#bebcbc"
+                android:gravity="start"
                 style="@style/TextAppearance.AppCompat.Medium"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:layout_marginStart="16dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:text="@string/a_daily_high"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/data_high"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
                 android:background="@color/brandcolor"
-                android:layout_marginEnd="16dp"
-                style="@style/TextAppearance.AppCompat.Small"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="Price" />
-        </RelativeLayout>
-    </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5">
 
-    <LinearLayout
-        android:background="@color/brandcolor"
-        android:padding="16dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/data_high"
+                    android:textSize="17sp"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/text"
+                    android:gravity="end"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-        <RelativeLayout
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="@color/brandcolor">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/brandcolor"
-                android:layout_alignParentStart="true"
+                android:textSize="18sp"
+                android:textColor="#bebcbc"
+                android:gravity="start"
                 style="@style/TextAppearance.AppCompat.Medium"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:layout_marginStart="16dp"
-                android:text="@string/a_daily_close"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/data_close"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Small"
-                android:background="@color/brandcolor"
-                android:layout_alignParentEnd="true"
-                android:paddingTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:paddingBottom="8dp"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="Price" />
-        </RelativeLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:background="@color/brandcolor"
-        android:padding="16dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/brandcolor"
-                android:layout_alignParentStart="true"
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:layout_marginStart="16dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:text="@string/a_daily_low"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/data_low"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                style="@style/TextAppearance.AppCompat.Small"
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
                 android:background="@color/brandcolor"
-                android:layout_alignParentEnd="true"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="Price" />
-        </RelativeLayout>
-    </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5">
+
+                <TextView
+                    android:id="@+id/data_low"
+                    android:textSize="17sp"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/text"
+                    android:gravity="end"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
 
-    <LinearLayout
-        android:background="@color/brandcolor"
-        android:padding="16dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            </LinearLayout>
 
-        <RelativeLayout
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="@color/brandcolor">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/brandcolor"
-                android:layout_alignParentStart="true"
+                android:textSize="18sp"
+                android:textColor="#bebcbc"
+                android:gravity="start"
                 style="@style/TextAppearance.AppCompat.Medium"
-                android:paddingTop="8dp"
-                android:layout_marginStart="16dp"
-                android:paddingBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:text="@string/a_previous_close"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/data_prev_close"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Small"
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
                 android:background="@color/brandcolor"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="Price" />
-        </RelativeLayout>
-    </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5">
 
-    <LinearLayout
-        android:background="@color/brandcolor"
-        android:padding="16dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/data_prev_close"
+                    android:textSize="17sp"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/text"
+                    android:gravity="end"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-        <RelativeLayout
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="@color/brandcolor">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/brandcolor"
-                android:layout_alignParentStart="true"
+                android:textSize="18sp"
+                android:textColor="#bebcbc"
+                android:gravity="start"
                 style="@style/TextAppearance.AppCompat.Medium"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:layout_marginStart="16dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:text="@string/a_daily_range"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/data_range"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Small"
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
                 android:background="@color/brandcolor"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="Price" />
-        </RelativeLayout>
-    </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5">
 
-    <LinearLayout
-        android:background="@color/brandcolor"
-        android:padding="16dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/data_range"
+                    android:textSize="17sp"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/text"
+                    android:gravity="end"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-        <RelativeLayout
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="@color/brandcolor">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/brandcolor"
-                android:layout_alignParentStart="true"
+                android:textSize="18sp"
+                android:textColor="#bebcbc"
+                android:gravity="start"
                 style="@style/TextAppearance.AppCompat.Medium"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:layout_marginStart="16dp"
-                android:text="@string/a_price_change"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/data_price_change"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/brandcolor"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp"
-                style="@style/TextAppearance.AppCompat.Small"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="Price" />
-        </RelativeLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:background="@color/brandcolor"
-        android:padding="16dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/brandcolor"
-                android:layout_alignParentStart="true"
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:paddingBottom="8dp"
-                android:layout_marginStart="16dp"
-                android:paddingTop="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:text="@string/a_volume"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/data_percent_change"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp"
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
                 android:background="@color/brandcolor"
-                style="@style/TextAppearance.AppCompat.Small"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="Price" />
-        </RelativeLayout>
-    </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5">
 
-    <LinearLayout
-        android:background="@color/brandcolor"
-        android:padding="16dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/data_percent_change"
+                    android:textSize="17sp"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/text"
+                    android:gravity="end"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-        <RelativeLayout
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="@color/brandcolor">
 
             <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/brandcolor"
-                android:layout_centerInParent="true"
+                android:textSize="18sp"
+                android:textColor="#bebcbc"
+                android:gravity="start"
                 style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:text="@string/data_source_alpha"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:layout_marginStart="16dp"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content" />
 
-        </RelativeLayout>
+            <TextView
+                android:textSize="18sp"
+                android:textColor="#bebcbc"
+                android:gravity="end"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:text="@string/source_alpha"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
+</android.support.v7.widget.CardView>
 
-</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

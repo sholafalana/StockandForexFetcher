@@ -76,7 +76,7 @@ public class CryptoAdapter extends RecyclerView.Adapter<CryptoAdapter.CustomView
                 )
         );
 
-        if (!isFirstLoad) {
+      /*  if (!isFirstLoad) {
             if (coin.getPrice() < calculateAmount24HoursAgo(coin.getPrice(), coin.getPerc())) {
                 Helpers.playListItemTransitionAnimation(mContext, R.color.transition_danger, holder.coinListItemLayout);
                 Helpers.playTextTransitionAnimation(mContext, R.color.danger, holder.coinPrice);
@@ -84,7 +84,7 @@ public class CryptoAdapter extends RecyclerView.Adapter<CryptoAdapter.CustomView
                 Helpers.playListItemTransitionAnimation(mContext, R.color.transition_success, holder.coinListItemLayout);
                 Helpers.playTextTransitionAnimation(mContext, R.color.success, holder.coinPrice);
             }
-        }
+        }   */
 
         Glide.with(mContext)
                 .load(imageContentURL +

@@ -196,7 +196,8 @@
     <string name="spinnerlost">Lost Trades</string>
     <string name="spinner_be">BreakEven</string>
     <string name="from_textt">From</string>
-    <string name="data_source_alpha">Data Source - AlphaVantage</string>
+    <string name="data_source_alpha">Data Source</string>
+    <string name="source_alpha">AlphaVantage</string>
     <string name="alpha_vnt">AlphaVantage</string>
 
     <string name="action_settings">Settings</string>

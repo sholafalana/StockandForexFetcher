@@ -21,11 +21,10 @@ public class TradeResourceActivity extends AppCompatActivity {
         setTitle(R.string.tr_title);
         String[] listItems = getResources().getStringArray(R.array.resource_names);
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listItems);
+                new ArrayAdapter<>(this, R.layout.custom_list_item, listItems);
 
         ListView listView = findViewById(R.id._listview);
         listView.setAdapter(adapter);
-        listView.setBackgroundColor(getResources().getColor(R.color.creamy_white));
         listView.setOnItemClickListener(
                 (adapterView, view, position, l) -> launchDetailActivity(position));
     }

@@ -29,7 +29,7 @@
     <color name="gray">#AAAAAA</color>
     <color name="danger">#ce5c5c</color>
     <color name="success">#6ca82e</color>
-    <color name="text">#676767</color>
+    <color name="text">#bebcbc</color>
     <color name="transition_danger">#fdadbd</color>
     <color name="transition_success">#c2e1a1</color>
 </resources>
