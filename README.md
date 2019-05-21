@@ -38,6 +38,8 @@ views
 ## Libraries
 
 * Material Design
+* Dagger 2
+* Retrofit
 * Achartengine
 * Room Database
 * ButterKnife
