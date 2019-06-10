@@ -1,14 +1,21 @@
 package com.dexertencreatives.stockandforexfetcher.UI;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.dexertencreatives.stockandforexfetcher.R;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -31,6 +38,9 @@ public class HomePageActivity extends AppCompatActivity {
     EditText seacrchText;
     @BindView(R.id.search_button)
     ImageButton SearchButton;
+    @BindView(R.id.fab_search)
+    FloatingActionButton floatingActionButton;
+
 
     private FirebaseAnalytics firebaseAnalytics;
 
@@ -40,6 +50,20 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         ButterKnife.bind(this);
         firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        ActionBar mActionBar = getSupportActionBar();
+        mActionBar.setDisplayShowHomeEnabled(false);
+        mActionBar.setDisplayShowTitleEnabled(false);
+        LayoutInflater mInflater = LayoutInflater.from(this);
+
+        View mCustomView = mInflater.inflate(R.layout.search_navigation, null);
+        TextView mTitleTextView = (TextView) mCustomView.findViewById(R.id.title_text);
+        mTitleTextView.setText(R.string.bar_main_title);
+
+        ImageButton imageButtonAdd = (ImageButton) mCustomView
+                .findViewById(R.id.imageAdd);
+        ImageButton imageButtonClose = (ImageButton) mCustomView
+                .findViewById(R.id.imageClose);
+
 
         btMarketRate.setOnClickListener(v -> {
             Intent CurrDetailIntent = new Intent(v.getContext(), CryptoDisplayActivity.class);
@@ -79,6 +103,93 @@ public class HomePageActivity extends AppCompatActivity {
             }
 
         });
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LayoutInflater li = LayoutInflater.from(HomePageActivity.this);
+                View promptsView = li.inflate(R.layout.prompt, null);
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                        HomePageActivity.this);
+
+                alertDialogBuilder.setView(promptsView);
+
+                final EditText userInput = (EditText) promptsView
+                        .findViewById(R.id.editTextDialogUserInput);
+                alertDialogBuilder
+                        .setCancelable(false)
+                        .setPositiveButton("OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        String sym = userInput.getText().toString().trim();
+                                        Intent graphIntent = new Intent(v.getContext(), GraphActivity.class);
+                                        graphIntent.putExtra(GraphActivity.EXTRA_SYMBOL, sym);
+                                        startActivity(graphIntent);
+
+                                    }
+                                })
+                        .setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });
+
+
+        imageButtonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater li = LayoutInflater.from(HomePageActivity.this);
+                View promptsView = li.inflate(R.layout.prompt, null);
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                        HomePageActivity.this);
+
+                alertDialogBuilder.setView(promptsView);
+
+                final EditText userInput = (EditText) promptsView
+                        .findViewById(R.id.editTextDialogUserInput);
+                alertDialogBuilder
+                        .setCancelable(false)
+                        .setPositiveButton("OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        String sym = userInput.getText().toString().trim();
+                                        Intent graphIntent2 = new Intent(view.getContext(), GraphActivity.class);
+                                        graphIntent2.putExtra(GraphActivity.EXTRA_SYMBOL, sym);
+                                        startActivity(graphIntent2);
+
+                                    }
+                                })
+                        .setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+
+
+            }
+        });
+        imageButtonClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                System.exit(0);
+            }
+        });
+
+        mActionBar.setCustomView(mCustomView);
+        mActionBar.setDisplayShowCustomEnabled(true);
 
 
     }
