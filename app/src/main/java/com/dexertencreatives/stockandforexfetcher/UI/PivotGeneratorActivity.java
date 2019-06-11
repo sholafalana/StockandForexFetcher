@@ -452,5 +452,10 @@ public class PivotGeneratorActivity extends AppCompatActivity implements View.On
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
 
 }

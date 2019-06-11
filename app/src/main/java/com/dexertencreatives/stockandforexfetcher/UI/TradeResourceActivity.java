@@ -91,5 +91,10 @@ public class TradeResourceActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
 
 }

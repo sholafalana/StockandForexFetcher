@@ -163,4 +163,9 @@ public class JournalAccessActivity extends AppCompatActivity {
         loadJournalVModel.updateItem(taskEntry);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

@@ -125,4 +125,9 @@ public class TradeJournalActivity extends AppCompatActivity implements TaskAdapt
         loadJournalVModel.deleteItem(taskEntry);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

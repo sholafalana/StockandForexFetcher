@@ -70,15 +70,15 @@ public class AlphaDataAdapter extends RecyclerView.Adapter<AlphaDataAdapter.Pars
         holder.mTitleTextView7.setText(CurrRange);
         holder.mTitleTextView8.setText(pChangeText);
         holder.mTitleTextView9.setText(CurrPercentChange);
-        if (priceIndicator > 0 ){
-            holder.mImageView.setImageResource(R.drawable.ic_arrow_drop_up_black_36dp);
+       /* if (priceIndicator > 0 ){
+           holder.mImageView.setImageResource(R.drawable.ic_arrow_drop_up_black_36dp);
             holder.mImageView.setVisibility(View.VISIBLE);
         }
 
         if (priceIndicator < 0 ){
             holder.mImageView.setImageResource(R.drawable.ic_arrow_drop_down_black_36dp);
             holder.mImageView.setVisibility(View.VISIBLE);
-        }
+        }    */
 
 
 
@@ -101,7 +101,7 @@ public class AlphaDataAdapter extends RecyclerView.Adapter<AlphaDataAdapter.Pars
         TextView mTitleTextView7;
         TextView mTitleTextView8;
         TextView mTitleTextView9;
-        ImageView mImageView;
+        //  ImageView mImageView;
 
         public ParseDataViewHolder(View itemView) {
             super(itemView);
@@ -118,7 +118,7 @@ public class AlphaDataAdapter extends RecyclerView.Adapter<AlphaDataAdapter.Pars
             mTitleTextView8 = itemView.findViewById(R.id.data_price_change);
 
             mTitleTextView9 = itemView.findViewById(R.id.data_percent_change);
-            mImageView = itemView.findViewById(R.id.symbol_floatbutton);
+            //  mImageView = itemView.findViewById(R.id.symbol_floatbutton);
 
 
         }
