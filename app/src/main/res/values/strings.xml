@@ -205,5 +205,6 @@
     <string name="priceInDollars">$%s</string>
     <string name="cap24hrChangeTitle">24h: \u0020</string>
     <string name="forex">Search</string>
+    <string name="Price">Price</string>
 
 </resources>

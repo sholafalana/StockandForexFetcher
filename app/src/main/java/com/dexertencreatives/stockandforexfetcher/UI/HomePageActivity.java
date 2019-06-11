@@ -32,10 +32,7 @@ public class HomePageActivity extends AppCompatActivity {
     Button mTradeJournal;
     @BindView(R.id.trade_resource)
     Button mTradeResource;
-    private static final String SAVED_SORT = "KeyForLayoutManagerState";
 
-    @BindView(R.id.search_button)
-    ImageButton SearchButton;
     @BindView(R.id.fab_search)
     FloatingActionButton floatingActionButton;
 
@@ -59,8 +56,7 @@ public class HomePageActivity extends AppCompatActivity {
 
         ImageButton imageButtonAdd = (ImageButton) mCustomView
                 .findViewById(R.id.imageAdd);
-       /* ImageButton imageButtonClose = (ImageButton) mCustomView
-                .findViewById(R.id.imageClose);  */
+
 
 
         btMarketRate.setOnClickListener(v -> {
@@ -91,16 +87,6 @@ public class HomePageActivity extends AppCompatActivity {
             startActivity(tjIntent);
         });
 
-    /*    SearchButton.setOnClickListener(v -> {
-
-            String sym = seacrchText.getText().toString().trim();
-            if (sym.length() != 0) {
-                Intent graphIntent = new Intent(v.getContext(), GraphActivity.class);
-                graphIntent.putExtra(GraphActivity.EXTRA_SYMBOL, sym);
-                startActivity(graphIntent);
-            }
-
-        });   */
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,11 +101,13 @@ public class HomePageActivity extends AppCompatActivity {
 
                 final EditText userInput = (EditText) promptsView
                         .findViewById(R.id.editTextDialogUserInput);
+
                 alertDialogBuilder
                         .setCancelable(false)
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
+
                                         String sym = userInput.getText().toString().trim();
                                         Intent graphIntent = new Intent(v.getContext(), GraphActivity.class);
                                         graphIntent.putExtra(GraphActivity.EXTRA_SYMBOL, sym);
@@ -158,7 +146,9 @@ public class HomePageActivity extends AppCompatActivity {
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
+
                                         String sym = userInput.getText().toString().trim();
+
                                         Intent graphIntent2 = new Intent(view.getContext(), GraphActivity.class);
                                         graphIntent2.putExtra(GraphActivity.EXTRA_SYMBOL, sym);
                                         startActivity(graphIntent2);
@@ -178,13 +168,6 @@ public class HomePageActivity extends AppCompatActivity {
 
             }
         });
-       /* imageButtonClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-                System.exit(0);
-            }
-        });   */
 
         mActionBar.setCustomView(mCustomView);
         mActionBar.setDisplayShowCustomEnabled(true);
@@ -230,16 +213,5 @@ public class HomePageActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle saveState) {
-        //  saveState.putString(SAVED_SORT, seacrchText.getText().toString());
-        super.onSaveInstanceState(saveState);
-    }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle saveInstanceState) {
-        super.onRestoreInstanceState(saveInstanceState);
-        //    seacrchText.setText(saveInstanceState.getString(SAVED_SORT));
-
-    }
 }
