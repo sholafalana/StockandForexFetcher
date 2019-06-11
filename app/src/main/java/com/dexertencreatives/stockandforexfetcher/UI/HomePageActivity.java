@@ -34,8 +34,6 @@ public class HomePageActivity extends AppCompatActivity {
     Button mTradeResource;
     private static final String SAVED_SORT = "KeyForLayoutManagerState";
 
-    @BindView(R.id.stock_search_edittext)
-    EditText seacrchText;
     @BindView(R.id.search_button)
     ImageButton SearchButton;
     @BindView(R.id.fab_search)
@@ -61,8 +59,8 @@ public class HomePageActivity extends AppCompatActivity {
 
         ImageButton imageButtonAdd = (ImageButton) mCustomView
                 .findViewById(R.id.imageAdd);
-        ImageButton imageButtonClose = (ImageButton) mCustomView
-                .findViewById(R.id.imageClose);
+       /* ImageButton imageButtonClose = (ImageButton) mCustomView
+                .findViewById(R.id.imageClose);  */
 
 
         btMarketRate.setOnClickListener(v -> {
@@ -93,7 +91,7 @@ public class HomePageActivity extends AppCompatActivity {
             startActivity(tjIntent);
         });
 
-        SearchButton.setOnClickListener(v -> {
+    /*    SearchButton.setOnClickListener(v -> {
 
             String sym = seacrchText.getText().toString().trim();
             if (sym.length() != 0) {
@@ -102,7 +100,7 @@ public class HomePageActivity extends AppCompatActivity {
                 startActivity(graphIntent);
             }
 
-        });
+        });   */
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -180,13 +178,13 @@ public class HomePageActivity extends AppCompatActivity {
 
             }
         });
-        imageButtonClose.setOnClickListener(new View.OnClickListener() {
+       /* imageButtonClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
                 System.exit(0);
             }
-        });
+        });   */
 
         mActionBar.setCustomView(mCustomView);
         mActionBar.setDisplayShowCustomEnabled(true);
@@ -234,14 +232,14 @@ public class HomePageActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle saveState) {
-        saveState.putString(SAVED_SORT, seacrchText.getText().toString());
+        //  saveState.putString(SAVED_SORT, seacrchText.getText().toString());
         super.onSaveInstanceState(saveState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle saveInstanceState) {
         super.onRestoreInstanceState(saveInstanceState);
-        seacrchText.setText(saveInstanceState.getString(SAVED_SORT));
+        //    seacrchText.setText(saveInstanceState.getString(SAVED_SORT));
 
     }
 }
